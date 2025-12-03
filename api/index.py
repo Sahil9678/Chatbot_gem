@@ -59,3 +59,5 @@ async def chat(payload: ChatPayload):
         return {"reply": response.text}
     except Exception as e:
         return {"error": str(e)}
+
+app = app
