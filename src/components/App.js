@@ -13,7 +13,7 @@ function App() {
 
 
   async function send(history,message) {
-    const res = await fetch("/api/chat", {
+    const res = await fetch("http://127.0.0.1:8000/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -33,7 +33,7 @@ function App() {
     if(history.length >0){
       await send([...history, { role: "user", content: data }],data)
     }else{
-      await send([{ role: "user", content: data }],data)
+      await send([],data)
     }
   }
 
