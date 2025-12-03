@@ -15,7 +15,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-client = genai.Client(api_key="AIzaSyD_C23ulpb4d7ra4UBA2xYEB8CGE4TgIvY")
+# client = genai.Client(api_key="AIzaSyD_C23ulpb4d7ra4UBA2xYEB8CGE4TgIvY")
+client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
 
 # Store chat history on server
 chat_history = []
