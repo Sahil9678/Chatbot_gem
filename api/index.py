@@ -4,7 +4,6 @@ from pydantic import BaseModel
 import google.generativeai as genai
 from typing import List, Dict
 import os
-from mangum import Mangum
 
 app = FastAPI()
 
@@ -60,5 +59,3 @@ async def chat(payload: ChatPayload):
         return {"reply": response.text}
     except Exception as e:
         return {"error": str(e)}
-
-handler = Mangum(app)
