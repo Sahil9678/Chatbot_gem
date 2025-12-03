@@ -1,0 +1,53 @@
+.Response-Container {
+  display: flex;
+  align-items: center;
+  background-color: #23bdbd75;
+  max-width: fit-content;
+  padding: 10px;
+  margin: 20px;
+  margin-right: 5px;
+  border-radius: 15px;
+}
+.Response-details {
+  margin: 10px;
+}
+.Response-name {
+  font-size: 36px;
+}
+.Response-user {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.Response-assistant {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.assitant-response {
+  background-color: #76c6c675;
+}
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.bot-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.btn {
+  border: none;
+  border-radius: 8%;
+}
+.btn--primary {
+  background-color: rgba(63, 211, 252, 0.707);
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn--info {
+  background-color: rgba(255, 255, 255, 0.357);
+}

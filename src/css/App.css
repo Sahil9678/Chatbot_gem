@@ -1,0 +1,14 @@
+@import-normalize;
+@import "NavBar.css";
+@import "Responsechat.css";
+@import "searchbox.css";
+@import "Responselist.css";
+
+html {
+  font-size: 25px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}

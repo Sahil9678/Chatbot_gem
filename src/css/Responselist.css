@@ -1,0 +1,12 @@
+.Response-grid {
+  display: flex;
+  flex-direction: column;
+  outline: 1px solid green;
+  flex-flow: column wrap-reverse;
+  align-content: space-between;
+  justify-content: space-around;
+  padding: 20px;
+  margin: 0 auto;
+  padding-top: 30px;
+  background-color: #23bdbd1b;
+}

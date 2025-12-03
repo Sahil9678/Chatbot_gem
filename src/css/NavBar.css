@@ -1,0 +1,32 @@
+.NavBar-container {
+  outline: 1px solid black;
+  height: 9vh;
+  position: relative;
+  padding: 5px;
+  padding-left: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  object-fit: contain;
+  background-color: #4cafff;
+  overflow: clip;
+}
+.logo {
+  object-position: left;
+  max-width: 20%;
+  object-fit: contain;
+  height: inherit;
+  display: flex;
+}
+.logo_img {
+  object-fit: cover;
+  object-position: bottom;
+}
+.ChatBot_img {
+  object-fit: cover;
+  object-position: top;
+}

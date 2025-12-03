@@ -1,0 +1,37 @@
+.searchbox-container {
+  display: flex;
+  position: relative;
+  padding-top: 20vh;
+  /* outline: 1px solid black; */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.searchbox {
+  width: 100%;
+  height: 2rem;
+  outline: 5px solid grey;
+  border-radius: 5px;
+  display: flex;
+}
+
+.searchbox-textarea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  border: none;
+  outline: none;
+}
+
+.searchbox-btn {
+  width: 10%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: #4cafff;
+  color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
