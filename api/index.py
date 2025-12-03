@@ -37,7 +37,7 @@ async def chat(payload: ChatPayload):
         for item in payload.history:
             role = "User" if item["role"].lower().startswith("user") else "Assistant"
             prompt += f"{role}: {item['content']}\n"
-        prompt += f"User: {payload.message}\nAssistant:"
+        prompt += f"User: {payload.message} \nAssistant:"
 
         response = client.models.generate_content(
             contents=prompt,
