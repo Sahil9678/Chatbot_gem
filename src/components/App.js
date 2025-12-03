@@ -12,15 +12,6 @@ function App() {
   const [searchedResponse,SetsearchedResponse]=useState('');
   const [history, setHistory] = useState([]);
 
-// {
-//   "history": [
-//     { "role": "user", "content": "Hi" },
-//     { "role": "assistant", "content": "Hello! How can I help?" },
-//     { "role": "user", "content": "Who are you?" },
-//     { "role": "assistant", "content": "I am Gemini." }
-//   ],
-//   "message": "Tell me a joke"
-// }
 
   async function send(history,message) {
     const res = await fetch("http://localhost:8000/api/chat", {
