@@ -8,7 +8,6 @@ import React , { useState } from 'react';
 export const MyContext = React.createContext();
 
 function App() {
-  const[_searchedData,SetsearchedData]=useState('');
   const [searchedResponse,SetsearchedResponse]=useState('');
   const [history, setHistory] = useState([]);
 
@@ -30,7 +29,6 @@ function App() {
 
 
   async function handlesearchedData(data){
-    SetsearchedData(data);
     setHistory([...history, { role: "user", content: data }]);
     if(history.length >0){
       await send([...history, { role: "user", content: data }],data)

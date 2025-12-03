@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import eblink from '../images/eblinkC.gif'
 import ChatBot from '../images/ChatBot1.gif'
 
