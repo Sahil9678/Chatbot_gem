@@ -2,3 +2,27 @@ fastapi
 google-generativeai
 pydantic
 mangum
+```
+
+### 5. Project Structure Should Look Like
+```
+chatbotpr/
+├── api/
+│   └── index.py
+├── src/
+│   ├── components/
+│   │   ├── App.js
+│   │   ├── NavBar.js
+│   │   ├── Responselist.js
+│   │   └── searchbox.js
+│   └── css/
+│       ├── App.css
+│       ├── NavBar.css
+│       ├── Responsechat.css
+│       ├── Responselist.css
+│       └── searchbox.css
+├── public/
+├── node_modules/
+├── package.json
+├── requirements.txt
+└── vercel.json
