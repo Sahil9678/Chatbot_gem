@@ -25,6 +25,7 @@ class ChatPayload(BaseModel):
     history: List[Dict[str, str]] = []
     message: str
 
+@app.get("/")
 @app.get("/api/")
 async def root():
     return {"status": "API is running"}
@@ -47,4 +48,4 @@ async def chat(payload: ChatPayload):
     except Exception as e:
         return {"error": str(e)}
 
-handler = Mangum(app)
+handler = Mangum(app, lifespan="off")
