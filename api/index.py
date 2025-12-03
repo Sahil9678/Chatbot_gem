@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from google import genai
+import google.generativeai as genai
 from typing import List, Dict
 import os
 from mangum import Mangum
@@ -16,7 +16,11 @@ app.add_middleware(
 )
 
 # client = genai.Client(api_key="AIzaSyD_C23ulpb4d7ra4UBA2xYEB8CGE4TgIvY")
-client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
+# client = genai.Client(api_key=os.environ.get("GOOGLE_API_KEY"))
+
+genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
+model = genai.GenerativeModel('gemini-2.5-flash')
+
 
 # Store chat history on server
 chat_history = []
@@ -35,16 +39,24 @@ async def root():
 async def chat(payload: ChatPayload):
     # combine history into one prompt string
     try:
-        prompt = ""
+            # Build the conversation with history
+        chat_session = model.start_chat(history=[])
+        
+        # Add previous messages to history
         for item in payload.history:
-            role = "User" if item["role"].lower().startswith("user") else "Assistant"
-            prompt += f"{role}: {item['content']}\n"
-        prompt += f"User: {payload.message} \nAssistant:"
-
-        response = client.models.generate_content(
-            contents=prompt,
-            model="gemini-2.5-flash",
-        )
+            if item["role"].lower().startswith("user"):
+                chat_session.history.append({
+                    "role": "user",
+                    "parts": [item["content"]]
+                })
+            else:
+                chat_session.history.append({
+                    "role": "model",
+                    "parts": [item["content"]]
+                })
+        
+        # Send the new message
+        response = chat_session.send_message(payload.message)
         return {"reply": response.text}
     except Exception as e:
         return {"error": str(e)}
