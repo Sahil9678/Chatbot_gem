@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from google import genai
 from typing import List, Dict
+import os
 
 app = FastAPI()
 
@@ -37,3 +38,5 @@ async def chat(payload: ChatPayload):
         model="gemini-2.5-flash",
     )
     return {"reply": response.text}
+
+handler = app
