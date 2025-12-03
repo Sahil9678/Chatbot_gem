@@ -8,7 +8,7 @@ import React , { useState } from 'react';
 export const MyContext = React.createContext();
 
 function App() {
-  const[searchedData,SetsearchedData]=useState('');
+  const[_searchedData,SetsearchedData]=useState('');
   const [searchedResponse,SetsearchedResponse]=useState('');
   const [history, setHistory] = useState([]);
 

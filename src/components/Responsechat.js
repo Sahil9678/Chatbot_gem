@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
-import { MyContext } from './App'
+import React from 'react'
 import user from '../images/user.png';
 import bot from '../images/bot.png';
 
 export default function Responsechat(props) {
-    // const { handleaddtocart } = useContext(MyContext)
 
    console.log('Responsechat props -',props);
 

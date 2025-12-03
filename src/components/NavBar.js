@@ -1,10 +1,8 @@
 import React, { useContext } from 'react'
 import eblink from '../images/eblinkC.gif'
 import ChatBot from '../images/ChatBot1.gif'
-import { MyContext } from './App'
 
 export default function NavBar() {
-    const { product_selected_details } = useContext(MyContext)
 
     return (
         <div>
