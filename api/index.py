@@ -61,4 +61,4 @@ async def chat(payload: ChatPayload):
     except Exception as e:
         return {"error": str(e)}
 
-handler = Mangum(app, lifespan="off")
+handler = Mangum(app)
